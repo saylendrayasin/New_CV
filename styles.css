@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Header */
+nav {
+    background-color: #2F5D62;
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    color: aqua;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: aqua;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: aqua;
+    background-color: #5E8B7E;
+}
+
+nav .menu {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav input {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: aqua;
+    border-radius: 3px;
+    transition: 0.8s;
+}
+
+/* Animation */
+
+.menu span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu input:checked~span:nth-child(3) {
+    transform: scale(0);
+}
+
+
+.menu input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+
+/* Responsive Design */
+
+/* Ukuran Tablet */
+@media screen and (max-width: 1000px) {
+    nav ul {
+        width: 55%;
+    }
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 650px) {
+    nav ul {
+        position: absolute;
+        background-color: #2F5D62;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 200vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    nav .menu {
+        display: flex;
+    }
+}
+
+/* End Header */
