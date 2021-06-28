@@ -4,7 +4,8 @@
 }
 
 body {
-    overflow-x: hidden;
+    background-color: #A7C4BC;
+    font-family: Georgia, 'Times New Roman', Times, serifs;
 }
 
 /* Header */
@@ -103,18 +104,17 @@ nav span {
         background-color: #2F5D62;
         right: 0;
         top: 0;
-        width: 80%;
-        height: 200vh;
+        width: 25%;
+        height: 100vh;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         transform: translateX(100%);
         transition: all 1s;
         opacity: 0;
-        z-index: -1;
     }
 
-    nav ul.slide {
+    nav ul.Aktif {
         transform: translateX(0);
         opacity: 1;
     }
@@ -124,4 +124,20 @@ nav span {
     }
 }
 
+
 /* End Header */
+
+/* Body */
+.jumbotron {
+    padding-top: 3rem;
+    background-color: #5E8B7E;
+}
+
+.list {
+    display: block;
+    list-style: none;
+}
+
+.foto {
+    display: blocks;
+}
